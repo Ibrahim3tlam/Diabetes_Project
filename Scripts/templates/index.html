@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>توقعات السكري</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h2 {
+            color: #005cbf;
+            text-align: center;
+            margin-top: 40px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            font-weight: bold;
+            color: #005cbf;
+        }
+        button {
+            margin-top: 20px;
+        }
+        h4 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+	<div class="container">
+		<h2>توقعات السكري</h2>
+		<form action="/" method="POST">
+			<div class="form-group">
+				<label for="Pregnancies"> عدد حالات الحمل </label>
+				<input type="number" class="form-control" id="Pregnancies" name="Pregnancies" required>
+			</div>
+			<div class="form-group">
+				<label for="Glucose">الجلوكوز:</label>
+				<input type="number" class="form-control" id="Glucose" name="Glucose" required>
+			</div>
+			<div class="form-group">
+				<label for="BloodPressure">ضغط الدم:</label>
+				<input type="number" class="form-control" id="BloodPressure" name="BloodPressure" required>
+			</div>
+			<div class="form-group">
+				<label for="SkinThickness">سمك الجلد:</label>
+				<input type="number" class="form-control" id="SkinThickness" name="SkinThickness" required>
+			</div>
+			<div class="form-group">
+				<label for="Insulin">الأنسولين:</label>
+				<input type="number" class="form-control" id="Insulin" name="Insulin" required>
+			</div>
+			<div class="form-group">
+
+				<label for="BMI">مؤشر كتلة الجسم = الوزن(كجم) /( الطول(م) * الطول(م))</label>
+				<input type="float" class="form-control" id="BMI" name="BMI" required>
+			</div>
+			<div class="form-group">
+				<label for="DiabetesPedigreeFunction">عدد افراد العائلة المصابين بالسكرى:</label>
+				<input type="float" class="form-control" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" required>
+			</div>
+			<div class="form-group">
+				<label for="Age">العمر:</label>
+				<input type="number" class="form-control" id="Age" name="Age" required>
+			</div>
+			<button type="submit" class="btn btn-primary">التنبؤ</button>
+		</form>
+		{% if prediction %}
+			<h4>{{ prediction }}</h4>
+		{% endif %}
+	</div>
+
+</body>
+</html>
